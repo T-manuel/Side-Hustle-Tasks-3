@@ -19,7 +19,7 @@ if (isset ($_POST["register"])) {
 </head>
 <body>
     <div class="container">
-        <form class = "first-form" action = "login.php" method = "POST" autocomplete="off">
+        <form class = "first-form" action = "index.php" method = "POST" autocomplete="off">
             <div class="form-group">
                 <label for = "usernames"> Username </label>
                 <input name = "usernames" class = "formControl" type = "text" placeholder = "7-10 characters" required>
