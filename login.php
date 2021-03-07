@@ -1,22 +1,23 @@
 <?php
-    $name = "T";
-    $mypass = "1";
+    session_start();
 
     if (isset($_POST["login"])) {
+
         $username = $_POST["username"];
         $password = $_POST["password"];
-        if ($username == $name && $password == $mypass) {
-            if (isset($_POST["Remember"])) {
-                setcookie("username", $username, time()+60*60*7);
-                setcookie("password", $password, time()+60*60*7);
+
+        if ($username == $_SESSION["usernames"] && $password == $_SESSION["passwords"]) {
+           if (isset($_POST["Remember"])) {
+            setcookie("username", $username, time()+60*60*7);
+            setcookie("password", $password, time()+60*60*7);
             }
-            session_start();
+
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
             header("location: landingpage.php");
         }
         else {
-            echo "username or password incorrect, please try again. <br>";
+            $error = "username or password incorrect, please try again.";
         }
     }
 ?>
@@ -45,6 +46,6 @@
             <input type ="submit" name = "login" class = "btn" value = "Login" >
         </form>
     </div>
-
+    <span> <?php echo " <br> <p class = 'echo'> $error </p>";?> </span>
 </body>
 </html>
