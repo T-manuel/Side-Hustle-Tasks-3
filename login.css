@@ -16,7 +16,6 @@ body {
 .container {
   background: white;
   position: relative;
-  max-width: 70%;
   margin-top: 10px;
 }
 
