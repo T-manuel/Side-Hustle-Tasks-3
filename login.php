@@ -6,13 +6,12 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        if ($username == $_SESSION["usernames"] && $password == $_SESSION["passwords"]) {
-           if (isset($_POST["Remember"])) {
+        if (($username == $_SESSION["usernames"] or $username == $_SESSION["emails"]) && $password == $_SESSION["passwords"]) {
+            if (isset($_POST["Remember"])) {
             setcookie("username", $username, time()+60*60*7);
             setcookie("password", $password, time()+60*60*7);
             }
-
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $_SESSION["usernames"];
             $_SESSION["password"] = $password;
             header("location: landingpage.php");
         }
@@ -35,7 +34,7 @@
         <form class = "first-form" action = "login.php" method = "POST" autocomplete="off">
             <div class="form-group">
                 <label for = "username"> Username </label>
-                <input name = "username" class = "formControl" type = "text" placeholder = "Your Username" required>
+                <input name = "username" class = "formControl" type = "text" placeholder = "username or email" required>
             </div>
             <div class="form-group">
                 <label for = "password"> password </label>
