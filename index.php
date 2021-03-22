@@ -31,39 +31,42 @@ if (isset ($_POST["register"])) {
 <body>
     <div class="container">
         <form class = "first-form" action = "index.php" method = "POST" autocomplete="off">
-            <div class="form-group">
+                        <div class="form-group-2">
                 <label for = "usernames"> Username </label>
-                <input name = "usernames" class = "formControl" type = "text" placeholder = "8-14 characters" required>
+                <input name = "usernames" value = <?php echo $user_a; ?> class = "formControl" type = "text" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "surname"> Surname </label>
-                <input name = "surname" class = "formControl" type = "text" required>
+                <input name = "surname" value = <?php echo $user_b; ?> class = "formControl" type = "text" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "firstname"> Firstname </label>
-                <input name = "firstname" class = "formControl" type = "text" required>
+                <input name = "firstname" value = <?php echo $user_c; ?> class = "formControl" type = "text" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "middleName"> Middle Name </label>
                 <input name = "middleName" class = "formControl" type = "text">
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "emails"> Email </label>
-                <input name = "emails" class = "formControl" type = "email" placeholder = "123@example.com" required>
+                <input name = "emails" value = <?php echo $user_d; ?> class = "formControl" type = "email" placeholder = "123@example.com" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "confirm email"> Confirm Email </label>
                 <input name = "confirmEmail" class = "formControl" type = "email" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-2">
                 <label for = "passwords"> password </label>
-                <input name = "passwords" class = "formControl" type = "password" placeholder = "8-12 charaters long"required>
+                <input name = "passwords" class = "formControl" type = "password" required>
             </div>
             <span> <input type = "checkbox" name = "T&amp;C" required> Accept Terms &amp; Conditions </span>
-            <div class = "form-group"></div>
-            <input type ="submit" class = "btn" name = "register" value = "Register" >
+            <div class = "form-group-1">
+                <input type ="submit" class = "btn" name = "register" value = "Register" >
+            </div>
         </form>
+
+        <span class = "echo"> <?php if (isset($error_a)) {echo "<br> $error_a";} ?> </span>
     </div>
-    <span> <?php echo " <br> <p class = 'echo'> $error </p>";?> </span>
+
 </body>
 </html>
