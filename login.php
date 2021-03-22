@@ -26,7 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link href ="login.css" type = "text/css" rel = "stylesheet" >
+    <link href ="login.css?v=<?php echo time();?>" type = "text/css" rel = "stylesheet" >
 </head>
 <body>
 
@@ -40,11 +40,12 @@
                 <label for = "password"> password </label>
                 <input name = "password" class = "formControl" type = "password" placeholder = "************"required>
             </div>
-            <span> <input type = "checkbox" name = "Remember"> Remember Me </span>
-            <div class = "form-group"></div>
+            <span class = "rmbr"> <input type = "checkbox" name = "Remember"> Remember Me </span>
+            <div class = "form-group-1">
             <input type ="submit" name = "login" class = "btn" value = "Login" >
+            </div>
         </form>
+        <span class = "echo"> <?php if (isset($error)) {echo "<br> $error";} ?> </span>
     </div>
-    <span> <?php echo " <br> <p class = 'echo'> $error </p>";?> </span>
 </body>
 </html>
