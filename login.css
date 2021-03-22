@@ -6,6 +6,9 @@
 
 body {
   background: #efefef;
+}
+
+.container {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -13,49 +16,51 @@ body {
   flex-direction: column;
 }
 
-.container {
-  background: white;
-  position: relative;
-  min-width: 60%;
-  margin-top: 10px;
-}
-
 .container .first-form {
-  width: 100%;
+  background: white;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 
-.container .first-form .form-group {
-  padding: 5px;
-}
-
-.container .first-form .form-group label {
+.container .first-form .form-group label, .container .first-form .form-group-2 label {
   color: #70a170;
 }
 
-.container .first-form .form-group .formControl {
+.container .first-form .form-group .formControl, .container .first-form .form-group-2 .formControl {
   border: none;
   font-size: 17px;
   border-bottom: 1px solid #1f968c;
-  position: relative;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  padding-top: 10px;
+  padding-top: 25px;
   outline: none;
   display: block;
+  overflow: hidden;
 }
 
-.container .first-form span {
+.container .first-form .rmbr {
   color: #0d3503;
   padding: 3px;
 }
 
-.container .first-form .btn {
-  padding: 8px;
+.container .form-group {
+  padding: 15px;
+}
+
+.container .form-group-1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container .form-group-1 .btn {
+  padding: 5px;
   border: none;
   outline: none;
-  margin: 15px 32% 6px 32%;
-  transform: translateX(5%);
+  color: white;
   background: rgba(24, 221, 67, 0.897);
+}
+
+.echo {
+  color: #a80808;
 }
