@@ -26,7 +26,7 @@ if (isset ($_POST["register"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link href ="styles/login.css?v=<?php echo time();?>" type = "text/css" rel = "stylesheet" >
+    <link href ="login.css?v=<?php echo time();?>" type = "text/css" rel = "stylesheet" >
 </head>
 <body>
     <div class="container">
